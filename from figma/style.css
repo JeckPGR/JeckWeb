@@ -1,0 +1,737 @@
+@import url("https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  font-family: "REM", sans-serif;
+  cursor: none;
+}
+
+:root {
+  --main-color: #f9f4ef;
+  --sec-color: #fbfbf9;
+  --text-color: #716040;
+  --button-color: #8c7851;
+  --tersier-color: #f25042;
+  --i: var(--i);
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--main-color);
+}
+
+body {
+  background-color: var(--main-color);
+}
+/*Headline def*/
+h1 {
+  font-size: 3rem;
+}
+
+.cursor-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--text-color);
+}
+
+.cursor-outline {
+  width: 35px;
+  height: 35px;
+  border: 3px solid hsla(23, 56%, 49%, 0.5);
+}
+
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.navbar #Logo {
+  font-family: "Lumanosimo", cursive;
+  transition: transform 0.2s ease-in;
+  animation: kiri 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes kiri {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes kanan {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+section {
+  max-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  margin: 20px;
+  font-family: "Inter", sans-serif;
+}
+.navbar #Logo {
+  font-size: 3.6rem;
+  letter-spacing: 1.1px;
+  margin-left: 4rem;
+}
+
+.navlist {
+  display: flex;
+  margin: 0 4rem 0 0;
+  animation: kanan 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.navlist ul i {
+  display: none;
+}
+
+.navlist ul li {
+  display: inline-block;
+  margin: 0 1rem;
+  padding: 10px;
+  font-size: 1.3rem;
+}
+
+.navlist ul li a {
+  border-radius: 10%;
+  padding: 15px;
+  background-color: transparent;
+}
+
+.navlist ul li a:hover {
+  border-radius: 10%;
+  color: var(--sec-color);
+  background-color: #716040;
+  transition: all 0.5s linear;
+}
+
+/*Home*/
+
+.home {
+  display: block;
+  margin: 8.5rem 4rem 0 4rem;
+  font-family: "Inter", sans-serif;
+}
+
+.home .textcontent h1 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  font-family: "REM", sans-serif;
+}
+
+.textcontent {
+  max-width: 650px;
+  animation: kiri 4s;
+}
+
+.textcontent p {
+  margin-top: 1rem;
+}
+
+.stroketext H2 {
+  color: transparent;
+  -webkit-text-stroke: 0.1rem var(--text-color);
+  font-size: 2rem;
+  font-family: "REM", sans-serif;
+}
+
+.textcontent .button {
+  margin-top: 1.6rem;
+}
+
+.button {
+  display: flex;
+  position: relative;
+}
+
+.button .btn-ok {
+  background-color: var(--button-color);
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px;
+  box-shadow: -5px -5px var(--tersier-color);
+  transition: all 0.4s;
+
+  font-family: "REM", sans-serif;
+}
+
+.button .btn-ok:hover {
+  background-color: var(--tersier-color);
+  box-shadow: 5px 5px var(--button-color);
+  letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 850px) {
+  #home {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navlist ul li {
+    display: none;
+  }
+
+  .navlist ul i {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2.5rem;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+.socmed {
+  display: flex;
+  margin-top: 11.2rem;
+  gap: 3rem;
+  flex-direction: row;
+  position: relative;
+}
+
+.socmed a {
+  font-size: 50px;
+  position: relative;
+}
+
+.socmed a::before {
+  content: attr(data-text);
+  display: none;
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #8c7851;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  transition: all 20s ease-in-out;
+}
+
+.socmed a:hover::before {
+  display: block;
+}
+
+.socmed a i {
+  margin: auto;
+}
+
+.socmed a:nth-child(1)::before {
+  content: "LinkedIn";
+  font-size: 15px;
+}
+
+.socmed a:nth-child(2)::before {
+  content: "Instagram";
+  font-size: 15px;
+}
+
+.socmed a:nth-child(3)::before {
+  content: "Youtube";
+  font-size: 15px;
+}
+
+.socmed a::after {
+  background-color: black;
+  height: 100px;
+  width: 100px;
+}
+
+@media screen and (max-width: 850px) {
+  .socmed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+  }
+}
+
+/* 1Page TOP*/
+
+.About {
+  background: var(--sec-color);
+  margin: 20px;
+  display: flex;
+  height: 100vh;
+  border-radius: 5px;
+  position: relative;
+}
+
+.containerabt {
+  display: flex;
+  justify-content: space-around;
+}
+
+.content-about {
+  margin: 4rem 5rem;
+  position: relative;
+  max-width: 50%;
+  padding: 1rem 2rem;
+  width: 55%; /* Adjusted width to make room for the profile picture */
+}
+
+.content-about h2 {
+  font-size: 3rem;
+}
+
+.content-about p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.button {
+  display: flex;
+  margin-top: 2rem;
+}
+.button .btn-ok {
+  background-color: var(--button-color);
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 20px; /* Adjust the padding as needed */
+  box-shadow: -5px -5px var(--tersier-color);
+  transition: all 0.4s;
+  font-family: "REM", sans-serif;
+}
+.button .btn-ok:hover {
+  background-color: var(--tersier-color);
+  box-shadow: 5px 5px var(--button-color);
+  letter-spacing: 1.5px;
+}
+
+.containerabt .image {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+.containerabt .image img {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+@media screen and (max-width: 850px) {
+  .containerabt .content-about {
+    margin: 2rem 2rem;
+    padding: 2rem 0;
+  }
+
+  .containerabt .image {
+    max-width: auto;
+    max-height: auto;
+  }
+}
+
+/* Preloader styles */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f9f4ef; /* Change this to the desired background color */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Set initial opacity to 1 */
+  transition: opacity 0.3s ease,
+    transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Add transition for smooth fade-out and zoom-in effects */
+  transform: scale(1); /* Set initial scale to 1 */
+}
+
+.preloader::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid #716040;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  margin: 4rem 0;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.container span {
+  color: var(--button-color);
+}
+
+.container .content-wrapper {
+  display: flex;
+  margin-top: 5rem;
+  gap: 60rem;
+  align-items: center;
+}
+
+.content-wrapper .skill {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.skill ul li {
+  display: flex;
+  justify-content: space-between;
+  border: 2px var(--text-color) solid;
+  gap: 30px;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--button-color);
+  padding: 0.5rem;
+  margin: 10px;
+  align-items: center;
+  position: relative;
+}
+
+.skill ul li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: red;
+  height: auto;
+}
+
+.skill ul li i {
+  font-size: 25px;
+}
+
+.listcontainer {
+  display: flex;
+  flex-wrap: wrap-reverse;
+}
+
+.listcontainer .Tools {
+  padding: 0.65rem 0.5rem;
+}
+/* Cloud*/
+.cloud {
+  position: absolute;
+  left: 39%;
+  bottom: 50%;
+  width: 320px;
+  height: 100px;
+  background-color: var(--text-color);
+  border-radius: 100px;
+}
+
+.cloud::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  left: 14%;
+  bottom: 38%;
+  background-color: var(--text-color);
+  border-radius: 100px;
+  box-shadow: 90px 0 0 30px var(--text-color);
+}
+
+.rain {
+  position: relative;
+  display: flex;
+  z-index: 1;
+}
+
+.rain span {
+  position: relative;
+  left: 20px;
+  top: 50px;
+  width: 10px;
+  height: 10px;
+  background-color: var(--text-color);
+  margin: 0 2px;
+  border-radius: 50%;
+  animation: hujan 5s linear infinite;
+  animation-duration: calc(10s / var(--i));
+  transform-origin: bottom;
+}
+
+.rain span:nth-child(1) {
+  --i: 1;
+}
+.rain span:nth-child(2) {
+  --i: 2;
+}
+.rain span:nth-child(3) {
+  --i: 3;
+}
+.rain span:nth-child(4) {
+  --i: 4;
+}
+.rain span:nth-child(5) {
+  --i: 5;
+}
+.rain span:nth-child(6) {
+  --i: 6;
+}
+.rain span:nth-child(8) {
+  --i: 7;
+}
+.rain span:nth-child(7) {
+  --i: 7;
+}
+.rain span:nth-child(9) {
+  --i: 9;
+}
+.rain span:nth-child(10) {
+  --i: 10;
+}
+.rain span:nth-child(11) {
+  --i: 11;
+}
+.rain span:nth-child(12) {
+  --i: 12;
+}
+.rain span:nth-child(13) {
+  --i: 13;
+}
+.rain span:nth-child(14) {
+  --i: 14;
+}
+.rain span:nth-child(15) {
+  --i: 15;
+}
+.rain span:nth-child(16) {
+  --i: 16;
+}
+.rain span:nth-child(17) {
+  --i: 17;
+}
+.rain span:nth-child(18) {
+  --i: 19;
+}
+.rain span:nth-child(20) {
+  --i: 20;
+}
+.rain span:nth-child(21) {
+  --i: 20;
+}
+
+@keyframes hujan {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  70% {
+    transform: translateY(300px) scale(1);
+  }
+
+  100% {
+    transform: translateY(300px) scale(0);
+  }
+}
+/*
+.textcontain {
+  width: 100vw;
+  height: 18vh;
+  background-color: var(--text-color);
+}*/
+
+.text-animation {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--main-color);
+}
+
+.text-animation::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--text-color);
+  width: 715px;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3.5px solid var(--text-color);
+  animation: textya 5.5s linear infinite;
+  filter: drop-shadow(0 0 30px var(--text-color));
+}
+
+@keyframes textya {
+  0%,
+  20%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 715px;
+  }
+}
+
+.wrapperform {
+  background-color: #fbfbf9;
+  width: 75rem;
+  height: 45rem;
+  border-radius: 15px;
+  display: flex;
+  box-shadow: -5px -3px 23px 0px rgba(195, 195, 195, 0.51);
+  -webkit-box-shadow: -5px -3px 23px 0px rgba(195, 195, 195, 0.51);
+  -moz-box-shadow: -5px -3px 23px 0px rgba(195, 195, 195, 0.51);
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+
+.wrapperform h1 {
+  margin: 7rem 0 0 0;
+  font-size: 2.5rem;
+}
+
+.wrapperinside {
+  display: flex;
+  justify-content: center;
+  margin-top: 5.5rem;
+}
+
+.wrapperthought {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.wrapperthought textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 2px var(--text-color) solid;
+  width: 500px;
+  flex: 1;
+  height: 150px;
+  resize: none;
+}
+
+input {
+  flex: 1;
+  flex-basis: 50%;
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  background: #fbfbf9;
+  border-bottom: 2px solid var(--text-color);
+  margin: 0 5rem;
+}
+
+input:hover {
+  border-color: var(--button-color);
+}
+
+input:focus {
+  outline: none;
+  border-color: #716040;
+}
+
+button {
+  width: max-content;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.2rem;
+  color: var(--main-color);
+  background: var(--button-color);
+  position: relative;
+  border-radius: 5px;
+  border: none transparent;
+  transition: all 0.4s ease-in-out;
+}
+
+button:focus {
+  background-color: var(--text-color);
+}
+
+.copyright {
+  background: var(--text-color);
+  font-size: 20px;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.copyright h3 {
+  padding: 0 3.5rem;
+  margin-top: 35px;
+  color: var(--main-color);
+  font-size: 1.2rem;
+}
+
+/* Add this CSS to position the Scroll to Top button */
+.scrolltop {
+  position: absolute;
+  right: 3rem;
+  bottom: 7rem;
+}
+
+#scrollToTopBtn {
+  background-color: var(--button-color);
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+#scrollToTopBtn i {
+  color: var(--main-color);
+}
